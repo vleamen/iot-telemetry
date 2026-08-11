@@ -26,15 +26,13 @@ I built this to get hands-on with the kind of data ingestion you'd see in enterp
 
 ## How to Run It
 
-You don't need to install Postgres locally—Docker handles the heavy lifting.
+You don't need to install Postgres locally as Docker handles the heavy lifting.
 
-**1. Boot the Backend**
-Make sure Docker Desktop is running, then spin up the API and database:
+1. Make sure Docker Desktop is running, then spin up the API and database:
 
 docker-compose up --build -d
 
-**2. Launch the Local Clients**
-In your virtual environment, install the local dependencies and run the start script:
+2. In your virtual environment, install the local dependencies and run the start script:
 
 pip install requests psutil matplotlib psycopg2-binary
 ./start_pipeline.command
