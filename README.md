@@ -2,7 +2,7 @@
 
 A containerized data pipeline built to handle high-frequency hardware telemetry. 
 
-Instead of relying on simulated data, this project uses a local Python agent to scrape real-time CPU and RAM utilization directly from the host machine. It fires those metrics to a Flask API, logs them permanently into a PostgreSQL database, and queries them back out to a live-updating Matplotlib dashboard.
+This project uses a local Python agent to scrape real-time CPU and RAM utilization directly from the host machine. It fires those metrics to a Flask API, logs them permanently into a PostgreSQL database, and queries them back out to a live-updating Matplotlib dashboard.
 
 I built this to get hands-on with the kind of data ingestion you'd see in enterprise IoT systems or vehicle hardware, focusing on making the backend lightweight, scalable, and deployable anywhere using Docker.
 
