@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
 
-import os # Add this at the top of app.py
+import os
 
 def get_db_connection():
     return psycopg2.connect(
@@ -59,5 +59,5 @@ def ingest_data():
     return jsonify({"status": "success"}), 201
 
 if __name__ == '__main__':
-    # Add host="0.0.0.0" to accept external Docker traffic
+    # "0.0.0.0" accepts external Docker traffic
     app.run(host="0.0.0.0", port=5001, debug=True)
