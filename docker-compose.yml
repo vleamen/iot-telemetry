@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: vincentnguyen
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: iot_telemetry
+    ports:
+      - "5432:5432"
+    # This automatically creates a table when the database boots up.
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  api:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      - DB_HOST=db
+      - DB_USER=vincentnguyen
+      - DB_PASSWORD=password
+    depends_on:
+      - db
